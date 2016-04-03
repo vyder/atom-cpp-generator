@@ -1,11 +1,14 @@
 {
   "name": "cpp-generator",
   "main": "./lib/main",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "C++ File generator for Atom editor",
   "author": "Vidur Murali <vidur.murali+atom@gmail.com>",
   "keywords": [
-    "c++", "cpp", "generator", "template"
+    "c++",
+    "cpp",
+    "generator",
+    "template"
   ],
   "activationCommands": {
     ".tree-view .selected": "cpp-generator:generate-c++-files",
