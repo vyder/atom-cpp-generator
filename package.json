@@ -1,0 +1,45 @@
+{
+  "name": "cpp-generator",
+  "main": "./lib/main",
+  "version": "0.0.1",
+  "description": "C++ File generator for Atom editor",
+  "author": "Vidur Murali <vidur.murali+atom@gmail.com>",
+  "keywords": [
+    "c++", "cpp", "generator", "template"
+  ],
+  "activationCommands": {
+    ".tree-view .selected": "cpp-generator:generate-c++-files",
+    "atom-workspace": [
+      "cpp-generator:generate-c++-files"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vyder/cpp-generator"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": "*"
+  },
+  "dependencies": {
+    "atom-space-pen-views": "^2.0.0",
+    "fs-extra": "^0.26.2",
+    "fs-plus": "^2.0.0",
+    "temp": "^0.8.1",
+    "underscore": "^1.8.3",
+    "loophole": "^1.1.0",
+    "moment": "^2.12.0"
+  },
+  "configSchema": {
+    "metaAuthor": {
+      "default": "<author>",
+      "type": "string",
+      "description": "The author's name to be used in the file's comment header."
+    },
+    "metaDateFormat": {
+      "default": "DD/MM/YYYY",
+      "type": "string",
+      "description": "The date in the file's comment header is formatted using this string. Uses Moment.js' formats available [here](http://momentjs.com/docs/#/displaying/)"
+    }
+  }
+}
