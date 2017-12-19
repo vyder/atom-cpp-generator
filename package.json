@@ -28,10 +28,10 @@
     "atom-space-pen-views": "^2.0.0",
     "fs-extra": "^0.26.2",
     "fs-plus": "^2.0.0",
-    "temp": "^0.8.1",
-    "underscore": "^1.8.3",
     "loophole": "^1.1.0",
-    "moment": "^2.12.0"
+    "moment": "^2.12.0",
+    "temp": "^0.8.1",
+    "underscore": "^1.8.3"
   },
   "configSchema": {
     "metaAuthor": {
@@ -43,6 +43,11 @@
       "default": "DD/MM/YYYY",
       "type": "string",
       "description": "The date in the file's comment header is formatted using this string. Uses Moment.js' formats available [here](http://momentjs.com/docs/#/displaying/)"
+    },
+    "useSelectedFilepath": {
+      "default": false,
+      "type": "boolean",
+      "description": "If set, the generator's input prompt directory will be set to the same directory as the currently selected file. Otherwise, will it will be set to the project's root directory. This is a bit of an obtuse description, just try it out and you will see."
     }
   }
 }

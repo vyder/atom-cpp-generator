@@ -46,14 +46,24 @@ class CppGeneratorView extends View
   setPathText: (placeholderName, rangeToSelect) ->
     editor = @miniEditor.getModel()
     rangeToSelect ?= [0, placeholderName.length]
-    placeholder = path.join(@projectPath(), placeholderName)
+    placeholder = path.join(@placeholderPath(), placeholderName)
     editor.setText(placeholder)
     pathLength = editor.getText().length
     endOfDirectoryIndex = pathLength - placeholderName.length
     editor.setSelectedBufferRange([[0, endOfDirectoryIndex + rangeToSelect[0]], [0, endOfDirectoryIndex + rangeToSelect[1]]])
 
+  placeholderPath: ->
+    if @shouldUseSelectedFilepath() && atom.workspace.getActiveTextEditor()
+      path.dirname(atom.workspace.getActiveTextEditor()?.getPath())
+    else
+      @projectPath()
+
   projectPath: ->
-    atom.project.getPaths()[0]
+    paths = atom.project.getPaths()
+    if paths.length > 0
+        paths[0]
+    else
+        ""
 
   metaProjectName: ->
     path.basename(@projectPath())
@@ -64,6 +74,9 @@ class CppGeneratorView extends View
 
   metaAuthor: ->
     atom.config.get('cpp-generator.metaAuthor')
+
+  shouldUseSelectedFilepath: ->
+    atom.config.get('cpp-generator.useSelectedFilepath')
 
   getUserInput: ->
     @miniEditor.getText().trim()
