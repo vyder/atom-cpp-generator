@@ -1,7 +1,7 @@
 {
   "name": "cpp-generator",
   "main": "./lib/main",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "C++ File generator for Atom editor",
   "author": "Vidur Murali <vidur.murali+atom@gmail.com>",
   "keywords": [
